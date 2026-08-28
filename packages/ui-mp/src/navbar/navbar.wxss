@@ -1,0 +1,105 @@
+.ui-navbar {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-weight: 600;
+  z-index: 100;
+}
+
+.ui-navbar--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.ui-navbar--transparent {
+  position: absolute;
+}
+
+.ui-navbar__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+}
+
+.ui-navbar__left,
+.ui-navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  flex-shrink: 0;
+  min-width: 96rpx;
+}
+
+.ui-navbar__right {
+  justify-content: flex-end;
+}
+
+.ui-navbar__title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-navbar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.001);
+  transition: background 0.15s;
+}
+
+.ui-navbar__btn--hover {
+  background: rgba(29, 33, 41, 0.1);
+}
+
+/* 返回箭头 */
+.ui-navbar__arrow-left {
+  width: 20rpx;
+  height: 20rpx;
+  border-left: 4rpx solid currentColor;
+  border-bottom: 4rpx solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 4rpx;
+}
+
+/* 首页图标（房子简化） */
+.ui-navbar__home {
+  width: 28rpx;
+  height: 28rpx;
+  border: 4rpx solid currentColor;
+  border-bottom: none;
+  position: relative;
+}
+.ui-navbar__home::before {
+  content: '';
+  position: absolute;
+  top: -16rpx;
+  left: -10rpx;
+  width: 0;
+  height: 0;
+  border-left: 24rpx solid transparent;
+  border-right: 24rpx solid transparent;
+  border-bottom: 16rpx solid currentColor;
+}
+
+.ui-navbar__text-btn {
+  padding: 0 16rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.ui-navbar__border {
+  height: 2rpx;
+  background: rgba(29, 33, 41, 0.08);
+}

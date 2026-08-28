@@ -9,6 +9,10 @@ export { default as Cell } from './cell';
 export { default as Divider } from './divider';
 export { default as Toast, registerToast } from './toast';
 export { default as Avatar } from './avatar';
+export { default as Navbar } from './navbar';
+export { default as TabBar } from './tabbar';
+export { default as SearchBar } from './searchbar';
 
 export * from './button/button.type';
 export * from './icon/icon.type';
+export * from './tabbar/tabbar';

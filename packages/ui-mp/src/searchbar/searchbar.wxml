@@ -1,0 +1,37 @@
+<view class="ui-searchbar {{customClass}}">
+  <view class="ui-searchbar__input-wrap ui-searchbar__input-wrap--{{shape}}" style="background: {{background || 'var(--color-bg-page, #F7F8FA)'}};">
+    <!-- 左侧插槽 -->
+    <slot name="left" />
+
+    <!-- 搜索图标 -->
+    <view class="ui-searchbar__icon">
+      <view class="ui-searchbar__icon-circle" />
+      <view class="ui-searchbar__icon-line" />
+    </view>
+
+    <input
+      class="ui-searchbar__input"
+      value="{{value}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="ui-searchbar__placeholder"
+      disabled="{{disabled}}"
+      readonly="{{readonly}}"
+      maxlength="{{maxlength}}"
+      confirm-type="search"
+      bindinput="onInput"
+      bindconfirm="onConfirm"
+      bindfocus="onFocus"
+      bindblur="onBlur"
+    />
+
+    <!-- 清除按钮 -->
+    <view wx:if="{{showClear}}" class="ui-searchbar__clear" bindtap="onClear" hover-class="ui-searchbar__clear--hover">
+      <view class="ui-searchbar__clear-icon" />
+    </view>
+  </view>
+
+  <!-- 右侧 action -->
+  <view wx:if="{{showAction}}" class="ui-searchbar__action" bindtap="onCancel" hover-class="ui-searchbar__action--hover">
+    {{actionText}}
+  </view>
+</view>

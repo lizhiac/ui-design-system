@@ -1,0 +1,44 @@
+<view
+  class="ui-navbar {{transparent ? 'ui-navbar--transparent' : ''}} {{fixed ? 'ui-navbar--fixed' : ''}} {{customClass}}"
+  style="background: {{transparent ? 'transparent' : (background || 'var(--color-brand-primary, #FFD933)')}}; color: {{textColor || 'var(--color-text-primary, #1D2129)'}}; height: {{totalHeight}}px;"
+>
+  <!-- 状态栏占位 -->
+  <view class="ui-navbar__statusbar" style="height: {{statusBarHeight}}px;" />
+
+  <!-- 内容区 -->
+  <view class="ui-navbar__content" style="height: {{navBarHeight}}px;">
+
+    <!-- 左侧：返回 / 首页 / 插槽 -->
+    <view class="ui-navbar__left">
+      <view wx:if="{{showBack}}" class="ui-navbar__btn ui-navbar__btn--back" bindtap="onBack" hover-class="ui-navbar__btn--hover">
+        <view class="ui-navbar__arrow-left" />
+      </view>
+      <view wx:if="{{showHome}}" class="ui-navbar__btn ui-navbar__btn--home" bindtap="onHome" hover-class="ui-navbar__btn--hover">
+        <view class="ui-navbar__home" />
+      </view>
+      <view wx:if="{{leftText}}" class="ui-navbar__text-btn" bindtap="onLeftTap">
+        {{leftText}}
+      </view>
+      <slot name="left" />
+    </view>
+
+    <!-- 中间标题 -->
+    <view class="ui-navbar__title" style="max-width: {{capsuleInfo ? 'calc(100vw - ' + (capsuleInfo.left + capsuleInfo.width + 24) + 'px)' : '60%'}}">
+      <slot>{{title}}</slot>
+    </view>
+
+    <!-- 右侧 -->
+    <view class="ui-navbar__right">
+      <slot name="right" />
+      <view wx:if="{{rightText}}" class="ui-navbar__text-btn" bindtap="onRightTap">
+        {{rightText}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部边框（fixed 时由页面外层提供）-->
+  <view wx:if="{{border && !transparent}}" class="ui-navbar__border" />
+</view>
+
+<!-- 占位元素：fixed 模式下，navbar 浮在内容上方，需要页面 padding-top -->
+<view wx:if="{{fixed}}" class="ui-navbar__placeholder" style="height: {{totalHeight}}px;" />

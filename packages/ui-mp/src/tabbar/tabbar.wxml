@@ -1,0 +1,37 @@
+<view
+  class="ui-tabbar {{fixed ? 'ui-tabbar--fixed' : ''}} {{customClass}}"
+  style="z-index: {{zIndex}}; background: {{background || 'var(--color-bg-card, #FFFFFF)'}};"
+>
+  <view wx:if="{{border && !fixed}}" class="ui-tabbar__border" />
+
+  <view class="ui-tabbar__items" style="padding-bottom: {{safeArea && fixed ? safeBottom + 'px' : 0}};">
+    <view
+      wx:for="{{items}}"
+      wx:key="key"
+      class="ui-tabbar__item {{item.key === activeKey ? 'ui-tabbar__item--active' : ''}}"
+      data-item="{{item}}"
+      bindtap="onItemTap"
+      hover-class="ui-tabbar__item--hover"
+    >
+      <view class="ui-tabbar__icon-wrap">
+        <!-- icon：优先 activeIcon（激活态），其次 icon -->
+        <view wx:if="{{item.icon}}" class="ui-tabbar__icon {{item.key === activeKey && item.activeIcon ? 'ui-tabbar__icon--hide' : ''}}">
+          {{item.icon}}
+        </view>
+        <view wx:if="{{item.activeIcon && item.key === activeKey}}" class="ui-tabbar__icon">
+          {{item.activeIcon}}
+        </view>
+        <!-- 角标 -->
+        <view wx:if="{{item.badge}}" class="ui-tabbar__badge">{{item.badge}}</view>
+        <!-- 红点 -->
+        <view wx:elif="{{item.dot}}" class="ui-tabbar__dot" />
+      </view>
+      <view class="ui-tabbar__label"
+        style="color: {{item.key === activeKey ? (activeColor || 'var(--color-brand-primary, #FFD933)') : (color || 'var(--color-text-secondary, #4E5969)')}};"
+      >{{item.label}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 占位元素（fixed 模式下页面需要 padding-bottom）-->
+<view wx:if="{{fixed}}" class="ui-tabbar__placeholder" style="padding-bottom: {{safeArea ? safeBottom + 'px' : 0}};" />

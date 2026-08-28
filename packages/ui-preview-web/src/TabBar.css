@@ -1,0 +1,86 @@
+.ui-tabbar {
+  width: 100%;
+  box-sizing: border-box;
+}
+.ui-tabbar--fixed {
+  position: sticky;
+  bottom: 0;
+}
+
+.ui-tabbar__border {
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.ui-tabbar__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 48px;
+  padding: 4px 0;
+}
+
+.ui-tabbar__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.ui-tabbar__item:hover { background: var(--color-bg-container-hover); }
+
+.ui-tabbar__icon-wrap {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ui-tabbar__icon { display: inline-block; }
+
+.ui-tabbar__label {
+  font-size: 11px;
+  line-height: 1.2;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.ui-tabbar__badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--color-brand-danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid var(--color-bg-card);
+  box-sizing: border-box;
+}
+
+.ui-tabbar__dot {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-brand-danger);
+  border-radius: 50%;
+  border: 1px solid var(--color-bg-card);
+  box-sizing: border-box;
+}
