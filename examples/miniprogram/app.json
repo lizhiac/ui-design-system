@@ -3,9 +3,11 @@
     "pages/index/index",
     "pages/cells/index",
     "pages/form/index",
-    "pages/picker/index"
+    "pages/picker/index",
+    "pages/search/index"
   ],
   "window": {
+    "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#FFD933",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "UI Demo",
@@ -18,6 +20,9 @@
     "ui-cell":     "@ui/ui-mp/cell",
     "ui-divider":  "@ui/ui-mp/divider",
     "ui-avatar":   "@ui/ui-mp/avatar",
+    "ui-navbar":   "@ui/ui-mp/navbar",
+    "ui-tabbar":   "@ui/ui-mp/tabbar",
+    "ui-searchbar":"@ui/ui-mp/searchbar",
 
     "van-button":        "@vant/weapp/button",
     "van-cell":          "@vant/weapp/cell",

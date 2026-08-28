@@ -1,0 +1,72 @@
+.ui-pull-refresh {
+  position: relative;
+  overflow: hidden;
+}
+
+.ui-pull-refresh__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: var(--color-text-secondary, #4E5969);
+  will-change: transform;
+}
+
+.ui-pull-refresh__indicator {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.ui-pull-refresh__arrow {
+  width: 24rpx;
+  height: 24rpx;
+  border-right: 4rpx solid currentColor;
+  border-bottom: 4rpx solid currentColor;
+  transform: rotate(135deg); /* 向下 */
+  transition: transform 0.2s;
+}
+.ui-pull-refresh__arrow--up {
+  transform: rotate(-45deg); /* 向上 */
+}
+
+.ui-pull-refresh__spinner {
+  width: 28rpx;
+  height: 28rpx;
+  border: 4rpx solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ui-pr-spin 0.8s linear infinite;
+  box-sizing: border-box;
+}
+
+.ui-pull-refresh__success {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  background: var(--color-brand-success, #00B42A);
+  position: relative;
+}
+.ui-pull-refresh__success::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 8rpx;
+  height: 14rpx;
+  border-right: 3rpx solid #fff;
+  border-bottom: 3rpx solid #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ui-pull-refresh__content {
+  will-change: transform;
+}
+
+@keyframes ui-pr-spin {
+  to { transform: rotate(360deg); }
+}

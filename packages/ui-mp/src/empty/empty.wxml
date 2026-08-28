@@ -1,0 +1,17 @@
+<view class="ui-empty {{customClass}}">
+  <!-- 图片：优先用户传入，否则按 type 显示默认 SVG 插图 -->
+  <block wx:if="{{image}}">
+    <image class="ui-empty__image" src="{{image }}" style="width: {{imageSize}}rpx; height: {{imageSize}}rpx;" mode="aspectFit" />
+  </block>
+  <block wx:else>
+    <view class="ui-empty__image ui-empty__image--{{type}}" style="width: {{imageSize}}rpx; height: {{imageSize}}rpx;">
+      <view wx:if="{{type === 'default'}}" class="ui-empty__svg ui-empty__svg--default" />
+      <view wx:elif="{{type === 'error'}}" class="ui-empty__svg ui-empty__svg--error" />
+      <view wx:elif="{{type === 'search'}}" class="ui-empty__svg ui-empty__svg--search" />
+      <view wx:elif="{{type === 'network'}}" class="ui-empty__svg ui-empty__svg--network" />
+    </view>
+  </block>
+
+  <view wx:if="{{description}}" class="ui-empty__desc">{{description}}</view>
+  <slot />
+</view>

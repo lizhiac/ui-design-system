@@ -1,0 +1,86 @@
+.ui-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 12rpx;
+}
+.ui-loading--vertical {
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+/* ===== Spinner ===== */
+.ui-loading--sm .ui-loading__spinner { width: 28rpx; height: 28rpx; }
+.ui-loading--md .ui-loading__spinner { width: 40rpx; height: 40rpx; }
+.ui-loading--lg .ui-loading__spinner { width: 56rpx; height: 56rpx; }
+
+.ui-loading__spinner {
+  display: inline-block;
+  position: relative;
+}
+.ui-loading__spinner-circle {
+  width: 100%;
+  height: 100%;
+  border: 4rpx solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: ui-loading-spin 0.8s linear infinite;
+  box-sizing: border-box;
+}
+.ui-loading--sm .ui-loading__spinner-circle { border-width: 4rpx; }
+.ui-loading--md .ui-loading__spinner-circle { border-width: 6rpx; }
+.ui-loading--lg .ui-loading__spinner-circle { border-width: 8rpx; }
+
+/* ===== Circular（4 个点轮转）===== */
+.ui-loading__circular {
+  display: inline-flex;
+  gap: 6rpx;
+}
+.ui-loading--sm .ui-loading__circular-dot { width: 8rpx; height: 8rpx; }
+.ui-loading--md .ui-loading__circular-dot { width: 12rpx; height: 12rpx; }
+.ui-loading--lg .ui-loading__circular-dot { width: 16rpx; height: 16rpx; }
+
+.ui-loading__circular-dot {
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: ui-loading-circular 1.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.15s);
+}
+
+/* ===== Dot（3 个点呼吸）===== */
+.ui-loading__dot {
+  display: inline-flex;
+  gap: 8rpx;
+}
+.ui-loading--sm .ui-loading__dot-item { width: 8rpx; height: 8rpx; }
+.ui-loading--md .ui-loading__dot-item { width: 12rpx; height: 12rpx; }
+.ui-loading--lg .ui-loading__dot-item { width: 16rpx; height: 16rpx; }
+
+.ui-loading__dot-item {
+  background: currentColor;
+  border-radius: 50%;
+  animation: ui-loading-dot 1.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+/* 文字 */
+.ui-loading__text {
+  font-size: 26rpx;
+  color: currentColor;
+}
+
+/* ===== 动画 ===== */
+@keyframes ui-loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ui-loading-circular {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ui-loading-dot {
+  0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-6rpx); }
+}

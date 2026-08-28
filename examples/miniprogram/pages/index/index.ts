@@ -1,6 +1,15 @@
 import { Toast } from '@ui/ui-mp';
 
 Page({
+  data: {
+    tabs: [
+      { key: 'home', label: '首页', icon: '🏠', url: 'tab://pages/index/index' },
+      { key: 'cells', label: '列表', icon: '📋', url: '/pages/cells/index' },
+      { key: 'cart', label: '购物车', icon: '🛒', badge: 3, url: '/pages/index/index' },
+      { key: 'me', label: '我的', icon: '👤', dot: true, url: '/pages/index/index' }
+    ]
+  },
+
   onView() {
     Toast.success('点击了查看图纸');
   },
@@ -26,13 +35,12 @@ Page({
     } as any);
   },
 
-  goCells() {
-    wx.navigateTo({ url: '/pages/cells/index' });
-  },
-  goForm() {
-    wx.navigateTo({ url: '/pages/form/index' });
-  },
-  goPicker() {
-    wx.navigateTo({ url: '/pages/picker/index' });
+  goSearch() { wx.navigateTo({ url: '/pages/search/index' }); },
+  goCells()  { wx.navigateTo({ url: '/pages/cells/index' }); },
+  goForm()   { wx.navigateTo({ url: '/pages/form/index' }); },
+  goPicker() { wx.navigateTo({ url: '/pages/picker/index' }); },
+
+  onTabChange(item: any) {
+    Toast.text(`切换到 ${item.label}`);
   }
 });

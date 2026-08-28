@@ -1,3 +1,9 @@
+<!-- 自建 Navbar（固定顶部）-->
+<ui-navbar title="UI Demo 首页" fixed show-home right-text="搜索" bind:right="goSearch" />
+
+<!-- 占位（因为 Navbar 是 fixed）-->
+<view style="height: 88px;"></view>
+
 <view class="page">
   <h1 class="page__title">组件展示</h1>
   <p class="page__desc">自建组件库（@ui/ui-mp）+ Vant Weapp 混合使用示例</p>
@@ -22,7 +28,7 @@
     <van-tag round custom-class="btn-spacing">圆角</van-tag>
   </view>
 
-  <!-- Section 3: Avatar + 自建头像 -->
+  <!-- Section 3: Avatar -->
   <view class="section">
     <view class="section__title">3. Avatar</view>
     <ui-avatar text="李" size="lg" bg-color="#FFD933" />
@@ -49,18 +55,22 @@
 
   <!-- Section 6: Vant Loading -->
   <view class="section">
-    <view class="section__title">6. Vant Loading + 自建 Toast</view>
+    <view class="section__title">6. Vant Loading</view>
     <van-loading type="spinner" size="32" color="#FFD933" />
     <van-loading type="spinner" size="32" color="#1D2129" custom-class="btn-spacing" />
   </view>
 
-  <!-- 底部按钮：导航到其他 demo 页 -->
+  <!-- Section 7: 跳转 -->
   <view class="section">
     <view class="section__title">更多 demo</view>
     <van-cell-group inset>
+      <van-cell title="搜索演示（自建 SearchBar）" is-link bind:click="goSearch" />
       <van-cell title="列表 Cell 演示" is-link bind:click="goCells" />
       <van-cell title="表单 Form 演示" is-link bind:click="goForm" />
       <van-cell title="选择器 Picker 演示" is-link bind:click="goPicker" border="{{ false }}" />
     </van-cell-group>
   </view>
 </view>
+
+<!-- 自建 TabBar（固定底部）-->
+<ui-tabbar items="{{tabs}}" active-key="home" bind:change="onTabChange" />

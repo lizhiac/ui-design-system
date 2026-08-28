@@ -1,0 +1,129 @@
+.ui-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 32rpx;
+  text-align: center;
+}
+
+.ui-empty__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32rpx;
+}
+
+.ui-empty__desc {
+  font-size: 26rpx;
+  color: var(--color-text-tertiary, #86909C);
+  line-height: 1.5;
+  max-width: 560rpx;
+}
+
+/* ===== 默认空状态：盒子+心 ===== */
+.ui-empty__svg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.ui-empty__svg--default {
+  background:
+    radial-gradient(circle at 50% 35%, #FFD933 30%, transparent 30.5%),
+    linear-gradient(180deg, transparent 60%, var(--color-border-light, #F2F3F5) 60%);
+}
+.ui-empty__svg--default::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background: var(--color-bg-page, #F7F8FA);
+  border: 4rpx solid var(--color-border-default, #E5E6EB);
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+
+/* ===== 错误状态：红色感叹号 ===== */
+.ui-empty__svg--error {
+  background: var(--color-brand-danger-light, #FFECE8);
+  border-radius: 50%;
+  position: relative;
+}
+.ui-empty__svg--error::before {
+  content: '!';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100rpx;
+  font-weight: 900;
+  color: var(--color-brand-danger, #F53F3F);
+}
+.ui-empty__svg--error::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  width: 16rpx;
+  height: 16rpx;
+  background: var(--color-brand-danger, #F53F3F);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===== 搜索状态：放大镜 ===== */
+.ui-empty__svg--search {
+  background: var(--color-brand-warning-light, #FFF3E0);
+  border-radius: 50%;
+  position: relative;
+}
+.ui-empty__svg--search::before {
+  content: '';
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  width: 50%;
+  height: 50%;
+  border: 8rpx solid var(--color-brand-warning, #FF7D00);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.ui-empty__svg--search::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 25%;
+  height: 8rpx;
+  background: var(--color-brand-warning, #FF7D00);
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+}
+
+/* ===== 网络错误：Wi-Fi 信号 ===== */
+.ui-empty__svg--network {
+  background: var(--color-bg-page, #F7F8FA);
+  border-radius: 50%;
+  position: relative;
+}
+.ui-empty__svg--network::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 75%, var(--color-text-tertiary, #86909C) 8rpx, transparent 9rpx);
+}
+.ui-empty__svg--network::after {
+  content: '📡';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80rpx;
+  opacity: 0.3;
+}

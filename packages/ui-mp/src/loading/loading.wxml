@@ -1,0 +1,20 @@
+<view class="ui-loading ui-loading--{{type}} ui-loading--{{size}} {{vertical ? 'ui-loading--vertical' : ''}} {{customClass}}"
+  style="color: {{color || 'currentColor'}};"
+>
+  <!-- spinner：旋转圆环 -->
+  <view wx:if="{{type === 'spinner'}}" class="ui-loading__spinner">
+    <view class="ui-loading__spinner-circle" />
+  </view>
+
+  <!-- circular：四圆环轮转 -->
+  <view wx:elif="{{type === 'circular'}}" class="ui-loading__circular">
+    <view class="ui-loading__circular-dot" wx:for="{{4}}" wx:key="*this" style="--i: {{index}};" />
+  </view>
+
+  <!-- dot：三点呼吸 -->
+  <view wx:elif="{{type === 'dot'}}" class="ui-loading__dot">
+    <view class="ui-loading__dot-item" wx:for="{{3}}" wx:key="*this" style="--i: {{index}};" />
+  </view>
+
+  <view wx:if="{{text}}" class="ui-loading__text">{{text}}</view>
+</view>

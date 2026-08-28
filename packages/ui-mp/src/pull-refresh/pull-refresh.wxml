@@ -1,0 +1,41 @@
+<view
+  class="ui-pull-refresh {{customClass}}"
+  bind:touchstart="onTouchStart"
+  bind:touchmove="onTouchMove"
+  bind:touchend="onTouchEnd"
+  bind:touchcancel="onTouchEnd"
+>
+  <!-- 头部状态栏 -->
+  <view class="ui-pull-refresh__header" style="height: {{pullDistance}}rpx; transform: translateY({{moveY - pullDistance}}rpx);">
+    <view class="ui-pull-refresh__indicator">
+      <!-- normal / pulling -->
+      <block wx:if="{{status === 'normal' || status === 'pulling'}}">
+        <view class="ui-pull-refresh__arrow {{status === 'pulling' ? 'ui-pull-refresh__arrow--down' : ''}}" />
+        <text>{{status === 'pulling' ? pullingText : refreshText}}</text>
+      </block>
+
+      <!-- loosing：释放立即刷新（箭头朝上）-->
+      <block wx:elif="{{status === 'loosing'}}">
+        <view class="ui-pull-refresh__arrow ui-pull-refresh__arrow--up" />
+        <text>{{loosingText}}</text>
+      </block>
+
+      <!-- loading：正在刷新 -->
+      <block wx:elif="{{status === 'loading'}}">
+        <view class="ui-pull-refresh__spinner" />
+        <text>{{loadingText}}</text>
+      </block>
+
+      <!-- success：刷新成功 -->
+      <block wx:elif="{{status === 'success' && showSuccess}}">
+        <view class="ui-pull-refresh__success" />
+        <text>{{successText}}</text>
+      </block>
+    </view>
+  </view>
+
+  <!-- 内容区（根据下拉状态偏移）-->
+  <view class="ui-pull-refresh__content" style="transform: translateY({{moveY}}rpx); transition: {{status === 'loading' ? 'transform 0.2s' : 'none'}};">
+    <slot />
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!-- 顶部 Navbar + SearchBar 一体化 -->
+<ui-navbar title="搜索" fixed show-back />
+
+<view style="height: 88px;"></view>
+
+<view class="search-page">
+  <!-- 搜索栏 -->
+  <view class="search-page__bar">
+    <ui-searchbar
+      value="{{keyword}}"
+      placeholder="输入商品名称"
+      show-action
+      action-text="搜索"
+      bind:input="onInput"
+      bind:search="onSearch"
+      bind:clear="onClear"
+      bind:cancel="onCancel"
+    />
+  </view>
+
+  <!-- 历史搜索 -->
+  <view wx:if="{{!searched}}" class="search-page__section">
+    <view class="search-page__title">
+      <text>历史搜索</text>
+      <ui-icon name="close" size="sm" bindtap="onClearHistory" />
+    </view>
+    <view class="search-page__tags">
+      <van-tag wx:for="{{history}}" wx:key="*this"
+        plain type="primary" custom-class="tag-spacing" data-keyword="{{item}}" bind:click="onTagTap">
+        {{item}}
+      </van-tag>
+    </view>
+  </view>
+
+  <!-- 热门搜索 -->
+  <view wx:if="{{!searched}}" class="search-page__section">
+    <view class="search-page__title">热门搜索</view>
+    <view class="search-page__tags">
+      <van-tag wx:for="{{hot}}" wx:key="*this"
+        type="warning" plain custom-class="tag-spacing" data-keyword="{{item}}" bind:click="onTagTap">
+        {{item}}
+      </van-tag>
+    </view>
+  </view>
+
+  <!-- 搜索结果 -->
+  <view wx:if="{{searched}}" class="search-page__results">
+    <view class="search-page__title">搜索 "{{keyword}}" 的结果</view>
+    <van-cell-group inset>
+      <van-cell wx:for="{{results}}" wx:key="id"
+        title="{{item.title}}"
+        label="{{item.desc}}"
+        value="¥{{item.price}}"
+        is-link
+        border="{{index < results.length - 1}}"
+      />
+    </van-cell-group>
+  </view>
+
+  <!-- 空状态：未搜索 -->
+  <view wx:if="{{!searched}}" class="search-page__empty">
+    <view class="search-page__empty-icon">🔍</view>
+    <view class="search-page__empty-text">输入关键词开始搜索</view>
+  </view>
+</view>
