@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cells/index",
+    "pages/form/index",
+    "pages/picker/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFD933",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "UI Demo",
+    "backgroundColor": "#F7F8FA"
+  },
+  "usingComponents": {
+    "ui-button":   "@ui/ui-mp/button",
+    "ui-icon":     "@ui/ui-mp/icon",
+    "ui-tag":      "@ui/ui-mp/tag",
+    "ui-cell":     "@ui/ui-mp/cell",
+    "ui-divider":  "@ui/ui-mp/divider",
+    "ui-avatar":   "@ui/ui-mp/avatar",
+
+    "van-button":        "@vant/weapp/button",
+    "van-cell":          "@vant/weapp/cell",
+    "van-cell-group":    "@vant/weapp/cell-group",
+    "van-icon":          "@vant/weapp/icon",
+    "van-tag":           "@vant/weapp/tag",
+    "van-divider":       "@vant/weapp/divider",
+
+    "van-dialog":        "@vant/weapp/dialog",
+    "van-action-sheet":  "@vant/weapp/action-sheet",
+    "van-notify":        "@vant/weapp/notify",
+    "van-overlay":       "@vant/weapp/overlay",
+    "van-loading":       "@vant/weapp/loading",
+    "van-toast":         "@vant/weapp/toast",
+
+    "van-form":          "@vant/weapp/form",
+    "van-field":         "@vant/weapp/field",
+    "van-switch":        "@vant/weapp/switch",
+    "van-checkbox":      "@vant/weapp/checkbox",
+    "van-checkbox-group":"@vant/weapp/checkbox-group",
+    "van-radio":         "@vant/weapp/radio",
+    "van-radio-group":   "@vant/weapp/radio-group",
+    "van-stepper":       "@vant/weapp/stepper",
+
+    "van-picker":        "@vant/weapp/picker",
+    "van-popup":         "@vant/weapp/popup",
+    "van-area":          "@vant/weapp/area"
+  }
+}

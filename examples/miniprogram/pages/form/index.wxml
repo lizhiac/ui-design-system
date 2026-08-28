@@ -1,0 +1,69 @@
+<view class="page">
+  <h1 class="page__title">Form 表单演示</h1>
+  <p class="page__desc">Vant Form + 自建 Button 组合</p>
+
+  <van-form bind:submit="onSubmit" bind:reset="onReset">
+    <van-cell-group inset>
+      <van-field
+        name="username"
+        label="用户名"
+        placeholder="请输入用户名"
+        required
+        rules="{{ [{ required: true, message: '请填写用户名' }] }}"
+        clearable
+      />
+      <van-field
+        name="phone"
+        label="手机号"
+        type="number"
+        placeholder="请输入手机号"
+        required
+        rules="{{ phoneRules }}"
+        clearable
+      />
+      <van-field
+        name="email"
+        label="邮箱"
+        type="text"
+        placeholder="选填"
+        rules="{{ [{ pattern: '^[^@]+@[^@]+$', message: '邮箱格式错误' }] }}"
+      />
+      <van-field name="gender" label="性别" is-link readonly placeholder="请选择" bind:tap="onGenderTap" />
+      <van-field name="city" label="所在城市" is-link readonly placeholder="请选择" bind:tap="onCityTap" />
+
+      <van-field name="switch" label="订阅通知">
+        <van-switch slot="input" name="switch" checked="{{ switchChecked }}" bind:change="onSwitchChange" />
+      </van-field>
+
+      <van-field name="hobby" label="兴趣爱好">
+        <van-checkbox-group slot="input" value="{{ hobby }}" bind:change="onHobbyChange" direction="horizontal">
+          <van-checkbox name="code" custom-class="ck">编程</van-checkbox>
+          <van-checkbox name="movie" custom-class="ck">电影</van-checkbox>
+          <van-checkbox name="sport" custom-class="ck">运动</van-checkbox>
+        </van-checkbox-group>
+      </van-field>
+
+      <van-field name="level" label="等级">
+        <van-radio-group slot="input" value="{{ level }}" bind:change="onLevelChange" direction="horizontal">
+          <van-radio name="1" custom-class="ck">A</van-radio>
+          <van-radio name="2" custom-class="ck">B</van-radio>
+          <van-radio name="3" custom-class="ck">C</van-radio>
+        </van-radio-group>
+      </van-field>
+
+      <van-field name="count" label="数量">
+        <van-stepper slot="input" value="{{ count }}" min="1" max="99" bind:change="onCountChange" />
+      </van-field>
+    </van-cell-group>
+
+    <view class="form-actions">
+      <ui-button type="ghost" block form-type="reset">重置</ui-button>
+      <ui-button type="primary" block form-type="submit" custom-class="ml">提交</ui-button>
+    </view>
+  </van-form>
+
+  <!-- 性别选择 popup -->
+  <van-popup show="{{ showGender }}" position="bottom" round bind:close="onGenderClose">
+    <van-picker columns="{{ genderColumns }}" bind:confirm="onGenderConfirm" bind:cancel="onGenderClose" show-toolbar />
+  </van-popup>
+</view>

@@ -1,0 +1,66 @@
+<view class="page">
+  <h1 class="page__title">组件展示</h1>
+  <p class="page__desc">自建组件库（@ui/ui-mp）+ Vant Weapp 混合使用示例</p>
+
+  <!-- Section 1: 自建 Button -->
+  <view class="section">
+    <view class="section__title">1. 自建 Button（品牌黄胶囊）</view>
+    <ui-button type="primary" size="lg" bindtap="onView">查看图纸</ui-button>
+    <ui-button type="secondary" size="md" custom-class="btn-spacing">次要按钮</ui-button>
+    <ui-button type="ghost" custom-class="btn-spacing">Ghost 按钮</ui-button>
+    <ui-button type="primary" loading custom-class="btn-spacing">加载中</ui-button>
+    <ui-button type="primary" disabled custom-class="btn-spacing">禁用</ui-button>
+  </view>
+
+  <!-- Section 2: Vant Tag -->
+  <view class="section">
+    <view class="section__title">2. Vant Tag</view>
+    <van-tag type="primary" custom-class="btn-spacing">标签</van-tag>
+    <van-tag type="success" custom-class="btn-spacing">成功</van-tag>
+    <van-tag type="danger" custom-class="btn-spacing">危险</van-tag>
+    <van-tag type="warning" plain custom-class="btn-spacing">警告边框</van-tag>
+    <van-tag round custom-class="btn-spacing">圆角</van-tag>
+  </view>
+
+  <!-- Section 3: Avatar + 自建头像 -->
+  <view class="section">
+    <view class="section__title">3. Avatar</view>
+    <ui-avatar text="李" size="lg" bg-color="#FFD933" />
+    <ui-avatar src="https://i.pravatar.cc/100" size="lg" custom-class="btn-spacing" />
+    <ui-avatar text="黄" size="md" bg-color="#E8F8EB" custom-class="btn-spacing" />
+    <ui-avatar text="赵" size="md" bg-color="#FFF3E0" custom-class="btn-spacing" />
+  </view>
+
+  <!-- Section 4: 自建 Divider -->
+  <view class="section">
+    <view class="section__title">4. Divider</view>
+    <ui-divider content="分割线" />
+    <ui-divider dashed content="虚线" />
+  </view>
+
+  <!-- Section 5: Vant Dialog -->
+  <view class="section">
+    <view class="section__title">5. Vant Dialog（弹窗）</view>
+    <ui-button type="secondary" bindtap="showDialog">打开 Dialog</ui-button>
+    <ui-button type="ghost" custom-class="btn-spacing" bindtap="showNotify">显示 Notify</ui-button>
+    <van-dialog id="van-dialog" />
+    <van-notify id="van-notify" />
+  </view>
+
+  <!-- Section 6: Vant Loading -->
+  <view class="section">
+    <view class="section__title">6. Vant Loading + 自建 Toast</view>
+    <van-loading type="spinner" size="32" color="#FFD933" />
+    <van-loading type="spinner" size="32" color="#1D2129" custom-class="btn-spacing" />
+  </view>
+
+  <!-- 底部按钮：导航到其他 demo 页 -->
+  <view class="section">
+    <view class="section__title">更多 demo</view>
+    <van-cell-group inset>
+      <van-cell title="列表 Cell 演示" is-link bind:click="goCells" />
+      <van-cell title="表单 Form 演示" is-link bind:click="goForm" />
+      <van-cell title="选择器 Picker 演示" is-link bind:click="goPicker" border="{{ false }}" />
+    </van-cell-group>
+  </view>
+</view>

@@ -1,0 +1,79 @@
+/* 1. 我们的 token（颜色/字号/间距/圆角/阴影） */
+@import "@ui/tokens/dist/miniprogram/variables.wxss";
+
+/* 2. Vant 主题覆盖：把 Vant 调成我们的品牌色 */
+page {
+  /* 品牌色：Vant 蓝色 → 我们的黄色 */
+  --van-primary-color: var(--color-brand-primary);
+  --van-button-primary-background: var(--color-brand-primary);
+  --van-button-primary-border-color: var(--color-border-strong);
+  --van-button-primary-color: var(--color-text-primary);
+
+  /* 文字色 */
+  --van-text-color:   var(--color-text-primary);
+  --van-text-color-2: var(--color-text-secondary);
+  --van-text-color-3: var(--color-text-tertiary);
+
+  /* 背景/边框 */
+  --van-background:   var(--color-bg-page);
+  --van-background-2: var(--color-bg-card);
+  --van-border-color: var(--color-border-default);
+
+  /* 圆角 */
+  --van-radius-md: 16rpx;
+  --van-radius-lg: 24rpx;
+
+  /* 全局基础样式 */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+}
+
+/* 3. 让 Vant Button 也接近自有胶囊风格 */
+.van-button--primary {
+  color: var(--color-text-primary) !important;
+  border: 2rpx solid var(--color-border-strong) !important;
+  border-radius: 44rpx !important;
+  font-weight: 700 !important;
+}
+
+.van-button--normal {
+  font-size: 30rpx !important;
+  height: 88rpx !important;
+  line-height: 84rpx !important;
+}
+
+/* 通用页面容器 */
+.page {
+  padding: 32rpx 24rpx;
+  min-height: 100vh;
+}
+
+.page__title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 16rpx 0;
+}
+
+.page__desc {
+  font-size: 26rpx;
+  color: var(--color-text-secondary);
+  margin: 0 0 32rpx 0;
+  line-height: 1.5;
+}
+
+.section {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.section__title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 16rpx 0;
+}

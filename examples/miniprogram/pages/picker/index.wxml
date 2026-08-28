@@ -1,0 +1,39 @@
+<view class="page">
+  <h1 class="page__title">Picker 选择器演示</h1>
+  <p class="page__desc">基础 Picker + 省市区 Area</p>
+
+  <van-cell-group inset>
+    <!-- 单列选择 -->
+    <van-cell title="水果" value="{{ fruit }}" is-link bind:tap="onFruitTap" />
+    <!-- 多列选择 -->
+    <van-cell title="日期时间" value="{{ dateTime }}" is-link bind:tap="onDateTap" />
+    <!-- 省市区三级联动（重点） -->
+    <van-cell title="省市区" value="{{ area }}" is-link bind:tap="onAreaTap" />
+  </van-cell-group>
+
+  <!-- 单列 Picker -->
+  <van-popup show="{{ showFruit }}" position="bottom" round bind:close="onCloseFruit">
+    <van-picker columns="{{ fruitColumns }}" bind:confirm="onFruitConfirm" bind:cancel="onCloseFruit" show-toolbar />
+  </van-popup>
+
+  <!-- 日期时间 Picker -->
+  <van-popup show="{{ showDate }}" position="bottom" round bind:close="onCloseDate">
+    <van-datetime-picker
+      value="{{ dateValue }}"
+      type="datetime"
+      bind:input="onDateInput"
+      bind:confirm="onDateConfirm"
+      bind:cancel="onCloseDate"
+    />
+  </van-popup>
+
+  <!-- 省市区 Picker（使用 Vant 内置的 areaList 数据）-->
+  <van-popup show="{{ showArea }}" position="bottom" round bind:close="onCloseArea">
+    <van-area
+      area-list="{{ areaList }}"
+      value-area="{{ areaValue }}"
+      bind:confirm="onAreaConfirm"
+      bind:cancel="onCloseArea"
+    />
+  </van-popup>
+</view>

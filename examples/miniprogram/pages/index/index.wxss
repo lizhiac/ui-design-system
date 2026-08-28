@@ -1,0 +1,14 @@
+.btn-spacing {
+  margin-left: 16rpx;
+}
+
+.section > ui-button,
+.section > van-tag,
+.section > ui-avatar,
+.section > van-loading {
+  display: inline-block;
+}
+
+.section > * + * {
+  margin-top: 16rpx;
+}

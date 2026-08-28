@@ -1,7 +1,7 @@
 /* Storybook 预览环境样式 */
 .ui-preview-wrapper {
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  color: var(--color-text-primary);
-  font-size: var(--font-size-md);
+  font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif);
   padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }

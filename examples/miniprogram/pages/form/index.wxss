@@ -1,0 +1,7 @@
+.form-actions {
+  display: flex;
+  padding: 32rpx 24rpx;
+  gap: 24rpx;
+}
+.ml { margin-left: 24rpx; }
+.ck + .ck { margin-left: 16rpx; }
