@@ -1,0 +1,25 @@
+.ui-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-bg-page, #F7F8FA);
+  flex-shrink: 0;
+}
+.ui-avatar--circle { border-radius: 50%; }
+.ui-avatar--square { border-radius: 8rpx; }
+
+.ui-avatar--xs { width: 40rpx;  height: 40rpx;  font-size: 20rpx; }
+.ui-avatar--sm { width: 56rpx;  height: 56rpx;  font-size: 24rpx; }
+.ui-avatar--md { width: 80rpx;  height: 80rpx;  font-size: 28rpx; }
+.ui-avatar--lg { width: 104rpx; height: 104rpx; font-size: 36rpx; }
+.ui-avatar--xl { width: 144rpx; height: 144rpx; font-size: 48rpx; }
+
+.ui-avatar__img {
+  width: 100%;
+  height: 100%;
+}
+.ui-avatar__text {
+  font-weight: 600;
+  line-height: 1;
+}

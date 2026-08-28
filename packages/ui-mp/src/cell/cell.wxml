@@ -1,0 +1,16 @@
+<view
+  class="ui-cell {{border ? 'ui-cell--border' : ''}} {{isLink ? 'ui-cell--link' : ''}} {{customClass}}"
+  hover-class="{{isLink ? 'ui-cell--hover' : ''}}"
+  bindtap="onTap"
+>
+  <view wx:if="{{icon}}" class="ui-cell__icon">
+    <view class="ui-cell__icon-glyph" />
+  </view>
+  <view class="ui-cell__body">
+    <view wx:if="{{title}}" class="ui-cell__title">{{title}}</view>
+    <view wx:if="{{label}}" class="ui-cell__label">{{label}}</view>
+  </view>
+  <view wx:if="{{value}}" class="ui-cell__value">{{value}}</view>
+  <slot name="right" />
+  <view wx:if="{{arrow || isLink}}" class="ui-cell__arrow" />
+</view>

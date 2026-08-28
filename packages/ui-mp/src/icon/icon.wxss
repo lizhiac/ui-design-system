@@ -1,0 +1,59 @@
+.ui-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.ui-icon__glyph {
+  width: 1em;
+  height: 1em;
+  background: currentColor;
+  /* 占位：实际项目里这里会换成 SVG mask 或 iconfont */
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* 尺寸：基于 font-size */
+.ui-icon--xs { font-size: 24rpx; }
+.ui-icon--sm { font-size: 32rpx; }
+.ui-icon--md { font-size: 40rpx; }
+.ui-icon--lg { font-size: 48rpx; }
+.ui-icon--xl { font-size: 56rpx; }
+
+/* 默认形状：用 CSS 简单画几个高频图标 */
+/* 实际项目推荐用 SVG 或 iconfont，这里用 CSS 提供 fallback */
+.ui-icon__glyph--close {
+  background: linear-gradient(45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%),
+              linear-gradient(-45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%);
+}
+.ui-icon__glyph--check {
+  background: linear-gradient(45deg, transparent 30%, currentColor 30%, currentColor 35%, transparent 35%),
+              linear-gradient(-45deg, transparent 65%, currentColor 65%, currentColor 70%, transparent 70%);
+}
+.ui-icon__glyph--arrow-left,
+.ui-icon__glyph--arrow-right,
+.ui-icon__glyph--arrow-up,
+.ui-icon__glyph--arrow-down {
+  background: none;
+  border: 0.15em solid currentColor;
+  border-bottom: none;
+  border-right: none;
+}
+.ui-icon__glyph--arrow-left  { transform: rotate(45deg); }
+.ui-icon__glyph--arrow-right { transform: rotate(-135deg); }
+.ui-icon__glyph--arrow-up    { transform: rotate(135deg); }
+.ui-icon__glyph--arrow-down  { transform: rotate(-45deg); }
+.ui-icon__glyph--arrow-left,
+.ui-icon__glyph--arrow-right,
+.ui-icon__glyph--arrow-up,
+.ui-icon__glyph--arrow-down {
+  width: 0.7em;
+  height: 0.7em;
+  border-right: 0.15em solid currentColor;
+  border-bottom: 0.15em solid currentColor;
+}

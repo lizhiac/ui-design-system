@@ -1,0 +1,84 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  border: 2px solid transparent;
+  transition: opacity 0.15s, transform 0.15s;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.ui-button:active {
+  opacity: 0.9;
+  transform: scale(0.985);
+}
+
+.ui-button--sm {
+  height: 28px;
+  font-size: 12px;
+  border-radius: 14px;
+  padding: 0 12px;
+}
+.ui-button--md {
+  height: 36px;
+  font-size: 14px;
+  border-radius: 18px;
+  padding: 0 14px;
+}
+.ui-button--lg {
+  height: 44px;
+  font-size: 15px;
+  border-radius: 22px;
+  padding: 0 16px;
+}
+
+.ui-button--primary {
+  background: var(--color-brand-primary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+.ui-button--secondary {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+.ui-button--ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+.ui-button--text {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: none;
+  padding: 0 4px;
+}
+
+.ui-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.ui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-button__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ui-btn-spin 0.8s linear infinite;
+  margin-right: 4px;
+  display: inline-block;
+}
+@keyframes ui-btn-spin {
+  to { transform: rotate(360deg); }
+}

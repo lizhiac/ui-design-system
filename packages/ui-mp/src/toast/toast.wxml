@@ -1,0 +1,10 @@
+<view wx:if="{{show}}" class="ui-toast-mask {{mask ? 'ui-toast-mask--active' : ''}}" catchtap="noop">
+  <view class="ui-toast ui-toast--{{position}} ui-toast--{{type}}">
+    <view wx:if="{{type === 'loading'}}" class="ui-toast__spinner" />
+    <view wx:elif="{{type === 'success'}}" class="ui-toast__icon ui-toast__icon--success" />
+    <view wx:elif="{{type === 'fail'}}" class="ui-toast__icon ui-toast__icon--fail" />
+    <view wx:elif="{{type === 'warning'}}" class="ui-toast__icon ui-toast__icon--warning" />
+    <view wx:if="{{message}}" class="ui-toast__message">{{message}}</view>
+    <slot />
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "shadow": {
+    "none":   { "value": "none",                                  "type": "boxShadow" },
+    "sm":     { "value": "0 2rpx 8rpx rgba(29,33,41,0.06)",       "type": "boxShadow", "description": "卡片轻浮起" },
+    "md":     { "value": "0 4rpx 16rpx rgba(29,33,41,0.08)",      "type": "boxShadow" },
+    "lg":     { "value": "0 8rpx 24rpx rgba(29,33,41,0.12)",      "type": "boxShadow", "description": "弹窗/Tab" }
+  }
+}

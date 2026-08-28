@@ -1,0 +1,11 @@
+{
+  "spacing": {
+    "xxs": { "value": "4rpx",  "type": "spacing" },
+    "xs":  { "value": "8rpx",  "type": "spacing" },
+    "sm":  { "value": "16rpx", "type": "spacing" },
+    "md":  { "value": "24rpx", "type": "spacing" },
+    "lg":  { "value": "32rpx", "type": "spacing" },
+    "xl":  { "value": "48rpx", "type": "spacing" },
+    "xxl": { "value": "64rpx", "type": "spacing" }
+  }
+}

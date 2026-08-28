@@ -1,0 +1,59 @@
+.ui-toast-mask {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+.ui-toast-mask--active {
+  background: rgba(0,0,0,0);
+}
+
+.ui-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 160rpx;
+  max-width: 480rpx;
+  padding: 24rpx 32rpx;
+  border-radius: 16rpx;
+  background: rgba(29, 33, 41, 0.85);
+  color: #FFFFFF;
+  font-size: 26rpx;
+  line-height: 1.4;
+}
+
+.ui-toast--top    { align-self: flex-start; margin-top: 20%; }
+.ui-toast--middle { /* 默认居中 */ }
+.ui-toast--bottom { align-self: flex-end; margin-bottom: 20%; }
+
+.ui-toast__message {
+  text-align: center;
+  word-break: break-all;
+}
+.ui-toast__spinner {
+  width: 48rpx;
+  height: 48rpx;
+  border: 4rpx solid rgba(255,255,255,0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: ui-toast-spin 0.8s linear infinite;
+  margin-bottom: 16rpx;
+}
+.ui-toast__icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 16rpx;
+  border-radius: 50%;
+  position: relative;
+}
+.ui-toast__icon--success { background: #00B42A; }
+.ui-toast__icon--fail    { background: #F53F3F; }
+.ui-toast__icon--warning { background: #FF7D00; }
+
+@keyframes ui-toast-spin {
+  to { transform: rotate(360deg); }
+}

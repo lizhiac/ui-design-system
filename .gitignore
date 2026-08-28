@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vscode
+.idea
+storybook-static
+packages/tokens/dist
+packages/ui-mp/miniprogram_dist
+packages/ui-preview-web/storybook-static

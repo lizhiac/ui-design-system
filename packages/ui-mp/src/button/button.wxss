@@ -1,0 +1,95 @@
+/* 胶囊按钮基础：88rpx 高，圆角 44rpx（按记忆中的规范） */
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 1;
+  border: 2rpx solid transparent;
+  transition: opacity 0.15s, transform 0.15s;
+  padding: 0 32rpx;
+}
+
+.ui-button--hover {
+  opacity: 0.9;
+  transform: scale(0.985);
+}
+
+/* 尺寸 */
+.ui-button--sm {
+  height: 56rpx;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  border-radius: 28rpx;
+  padding: 0 24rpx;
+}
+.ui-button--md {
+  height: 72rpx;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  border-radius: 36rpx;
+  padding: 0 28rpx;
+}
+.ui-button--lg {
+  height: 88rpx;
+  line-height: 84rpx;
+  font-size: 30rpx;
+  border-radius: 44rpx;
+  padding: 0 32rpx;
+}
+
+/* 类型 */
+.ui-button--primary {
+  background: var(--color-brand-primary, #FFD933);
+  color: var(--color-text-primary, #1D2129);
+  border-color: var(--color-border-strong, #1D2129);
+}
+
+.ui-button--secondary {
+  background: var(--color-bg-card, #FFFFFF);
+  color: var(--color-text-primary, #1D2129);
+  border-color: var(--color-border-strong, #1D2129);
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: var(--color-text-primary, #1D2129);
+  border-color: var(--color-border-strong, #1D2129);
+}
+
+.ui-button--text {
+  background: transparent;
+  color: var(--color-text-primary, #1D2129);
+  border: none;
+  padding: 0 8rpx;
+}
+
+/* 块级 */
+.ui-button--block {
+  display: flex;
+  width: 100%;
+}
+
+/* 禁用 */
+.ui-button[disabled] {
+  opacity: 0.5;
+}
+
+/* loading */
+.ui-button__loading {
+  margin-right: 8rpx;
+}
+.ui-button__spinner {
+  width: 28rpx;
+  height: 28rpx;
+  border: 4rpx solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ui-button-spin 0.8s linear infinite;
+}
+@keyframes ui-button-spin {
+  to { transform: rotate(360deg); }
+}

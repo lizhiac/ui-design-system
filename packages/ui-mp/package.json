@@ -1,0 +1,22 @@
+{
+  "name": "@ui/ui-mp",
+  "version": "0.1.0",
+  "description": "微信小程序组件库（TS + WXSS）",
+  "main": "miniprogram_dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-wxml.js",
+    "dev": "tsc -p tsconfig.json -w"
+  },
+  "files": [
+    "miniprogram_dist",
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "@ui/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

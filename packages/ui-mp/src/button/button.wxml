@@ -1,0 +1,13 @@
+<wxs src="./button.wxs" module="computed" />
+<button
+  class="ui-button ui-button--{{type}} ui-button--{{size}} {{block ? 'ui-button--block' : ''}} {{customClass}}"
+  hover-class="{{hoverClass}}"
+  disabled="{{disabled || loading}}"
+  open-type="{{openType }}"
+  bindtap="onTap"
+>
+  <view wx:if="{{loading}}" class="ui-button__loading">
+    <view class="ui-button__spinner" />
+  </view>
+  <slot />
+</button>

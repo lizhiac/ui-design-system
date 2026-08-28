@@ -1,0 +1,7 @@
+<view
+  class="ui-icon ui-icon--{{size}} {{customClass}}"
+  style="color: {{color || 'inherit'}};"
+  bindtap="onTap"
+>
+  <view class="ui-icon__glyph ui-icon__glyph--{{name}}" />
+</view>

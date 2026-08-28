@@ -1,0 +1,13 @@
+{
+  "name": "@ui/tokens",
+  "version": "0.1.0",
+  "description": "设计 Token 源 + 多端构建产物",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "style-dictionary build",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "style-dictionary": "^4.0.1"
+  }
+}

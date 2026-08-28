@@ -1,0 +1,30 @@
+.ui-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.ui-tag--sm { height: 14px; padding: 0 4px;  font-size: 10px; border-radius: 3px; }
+.ui-tag--md { height: 18px; padding: 0 6px;  font-size: 11px; border-radius: 4px; }
+.ui-tag--lg { height: 22px; padding: 0 8px;  font-size: 13px; border-radius: 5px; }
+
+.ui-tag--default { background: var(--color-bg-page); color: var(--color-text-secondary); }
+.ui-tag--primary { background: var(--color-brand-primary); color: var(--color-text-primary); }
+.ui-tag--success { background: #E8F8EB; color: var(--color-brand-success); }
+.ui-tag--warning { background: #FFF3E0; color: var(--color-brand-warning); }
+.ui-tag--danger  { background: #FFECE8; color: var(--color-brand-danger); }
+
+.ui-tag--round { border-radius: 9999px; }
+
+.ui-tag--plain.ui-tag--default { background: transparent; border-color: var(--color-border-default); }
+.ui-tag--plain.ui-tag--primary { background: transparent; border-color: var(--color-text-primary); color: var(--color-text-primary); }
+.ui-tag--plain.ui-tag--success { background: transparent; border-color: var(--color-brand-success); color: var(--color-brand-success); }
+.ui-tag--plain.ui-tag--warning { background: transparent; border-color: var(--color-brand-warning); color: var(--color-brand-warning); }
+.ui-tag--plain.ui-tag--danger  { background: transparent; border-color: var(--color-brand-danger); color: var(--color-brand-danger); }

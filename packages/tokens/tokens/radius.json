@@ -1,0 +1,10 @@
+{
+  "radius": {
+    "none":  { "value": "0",     "type": "borderRadius" },
+    "sm":    { "value": "8rpx",  "type": "borderRadius", "description": "小元素/Tag" },
+    "md":    { "value": "16rpx", "type": "borderRadius", "description": "卡片/弹窗" },
+    "lg":    { "value": "24rpx", "type": "borderRadius" },
+    "pill":  { "value": "44rpx", "type": "borderRadius", "description": "胶囊按钮（高 88rpx 一半）" },
+    "round": { "value": "9999rpx", "type": "borderRadius", "description": "完全圆角" }
+  }
+}

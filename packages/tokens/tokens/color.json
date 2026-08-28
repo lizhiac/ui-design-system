@@ -1,0 +1,29 @@
+{
+  "color": {
+    "text": {
+      "primary":   { "value": "#1D2129", "type": "color", "description": "主文本/激活态/标准黑" },
+      "secondary": { "value": "#4E5969", "type": "color", "description": "次要文本" },
+      "tertiary":  { "value": "#86909C", "type": "color", "description": "辅助/禁用文本" },
+      "placeholder":{ "value": "#C9CDD4", "type": "color", "description": "占位文本" },
+      "inverse":   { "value": "#FFFFFF", "type": "color", "description": "深底反白文字" }
+    },
+    "border": {
+      "default": { "value": "#E5E6EB", "type": "color" },
+      "strong":  { "value": "#1D2129", "type": "color" },
+      "light":   { "value": "#F2F3F5", "type": "color" }
+    },
+    "bg": {
+      "page":   { "value": "#F7F8FA", "type": "color" },
+      "card":   { "value": "#FFFFFF", "type": "color" },
+      "mask":   { "value": "rgba(29,33,41,0.5)", "type": "color" }
+    },
+    "brand": {
+      "primary":  { "value": "#FFD933", "type": "color", "description": "主品牌色/胶囊按钮底色" },
+      "primary-press": { "value": "#F5C500", "type": "color" },
+      "success":  { "value": "#00B42A", "type": "color" },
+      "warning":  { "value": "#FF7D00", "type": "color" },
+      "danger":   { "value": "#F53F3F", "type": "color" },
+      "info":     { "value": "#86909C", "type": "color" }
+    }
+  }
+}

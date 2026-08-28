@@ -1,0 +1,15 @@
+<view
+  class="ui-avatar ui-avatar--{{size}} ui-avatar--{{shape}} {{customClass}}"
+  style="background: {{bgColor || 'var(--color-bg-page, #F7F8FA)'}};"
+  bindtap="onTap"
+>
+  <image
+    wx:if="{{src}}"
+    class="ui-avatar__img"
+    src="{{src}}"
+    mode="aspectFill"
+    binderror="onError"
+  />
+  <view wx:elif="{{text}}" class="ui-avatar__text" style="color: {{textColor}};">{{text}}</view>
+  <slot wx:else />
+</view>

@@ -1,0 +1,20 @@
+{
+  "name": "ui-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "跨端设计系统 monorepo：tokens + 小程序组件库 + Web 预览",
+  "scripts": {
+    "tokens:build": "pnpm --filter @ui/tokens build",
+    "ui-mp:build": "pnpm --filter @ui/ui-mp build",
+    "storybook": "pnpm --filter @ui/ui-preview-web storybook",
+    "storybook:build": "pnpm --filter @ui/ui-preview-web build-storybook",
+    "dev": "pnpm tokens:build && pnpm storybook"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

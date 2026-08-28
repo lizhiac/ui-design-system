@@ -1,0 +1,4 @@
+// 预留：需要时可在 wxml 里调用此模块做计算
+module.exports = {
+  noop: function() {}
+};

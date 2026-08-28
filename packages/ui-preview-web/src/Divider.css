@@ -1,0 +1,22 @@
+.ui-divider {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  min-width: 280px;
+}
+.ui-divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-default);
+}
+.ui-divider--dashed .ui-divider__line {
+  background: none;
+  border-top: 1px dashed var(--color-border-default);
+  height: 0;
+}
+.ui-divider__content {
+  padding: 0 12px;
+  flex-shrink: 0;
+}

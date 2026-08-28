@@ -1,0 +1,22 @@
+{
+  "font": {
+    "size": {
+      "xs":   { "value": "20rpx", "type": "fontSize", "description": "辅助说明" },
+      "sm":   { "value": "24rpx", "type": "fontSize" },
+      "md":   { "value": "28rpx", "type": "fontSize", "description": "正文" },
+      "lg":   { "value": "32rpx", "type": "fontSize" },
+      "xl":   { "value": "36rpx", "type": "fontSize" },
+      "xxl":  { "value": "44rpx", "type": "fontSize", "description": "大标题" }
+    },
+    "weight": {
+      "regular":  { "value": "400", "type": "fontWeight" },
+      "medium":   { "value": "500", "type": "fontWeight" },
+      "bold":     { "value": "700", "type": "fontWeight" }
+    },
+    "line-height": {
+      "tight":   { "value": "1.2", "type": "lineHeight" },
+      "normal":  { "value": "1.4", "type": "lineHeight" },
+      "relaxed": { "value": "1.6", "type": "lineHeight" }
+    }
+  }
+}

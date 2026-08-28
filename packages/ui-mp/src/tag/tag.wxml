@@ -1,0 +1,6 @@
+<view
+  class="ui-tag ui-tag--{{type}} ui-tag--{{size}} {{plain ? 'ui-tag--plain' : ''}} {{round ? 'ui-tag--round' : ''}} {{customClass}}"
+  bindtap="onTap"
+>
+  <slot />
+</view>

@@ -1,0 +1,6 @@
+<view class="ui-divider {{dashed ? 'ui-divider--dashed' : ''}} {{customClass}}">
+  <view class="ui-divider__line ui-divider__line--left" />
+  <view wx:if="{{content}}" class="ui-divider__content">{{content}}</view>
+  <slot wx:else />
+  <view class="ui-divider__line ui-divider__line--right" />
+</view>
