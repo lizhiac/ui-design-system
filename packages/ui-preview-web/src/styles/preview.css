@@ -8,23 +8,35 @@
   box-sizing: border-box;
 }
 
-/* 把背景色放到 body（覆盖整个 canvas），跟随主题切换 */
-:root {
-  background: var(--color-bg-card);
-}
-[data-theme="dark"] {
-  background: var(--color-bg-card);
+/* 覆盖 Storybook 自带的浅蓝灰 canvas 背景 */
+:root,
+[data-theme="light"] {
+  --sb-background-color: #FFFFFF;
+  --sb-content-background-color: #FFFFFF;
 }
 
-body,
+[data-theme="dark"] {
+  --sb-background-color: var(--color-bg-card);
+  --sb-content-background-color: var(--color-bg-card);
+}
+
+/* 强制覆盖所有可能显示灰色的容器 */
 .sb-show-main,
-#root {
-  background: var(--color-bg-page);
+.sbdocs-content,
+.docs-story,
+.sb-story,
+#storybook-root,
+.sbdocs.sbdocs-wrapper,
+.sbdocs-preview,
+.docs-story > div {
+  background: transparent !important;
+}
+
+body {
+  background: #FFFFFF;
   transition: background 0.3s;
 }
 
-[data-theme="dark"] body,
-[data-theme="dark"] .sb-show-main,
-[data-theme="dark"] #root {
-  background: var(--color-bg-page);
+[data-theme="dark"] body {
+  background: var(--color-bg-card);
 }
