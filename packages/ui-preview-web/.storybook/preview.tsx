@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Preview } from '@storybook/react';
 import '../src/styles/tokens.css';
 import '../src/styles/preview.css';
@@ -21,23 +21,21 @@ const preview: Preview = {
   },
   parameters: {
     layout: 'centered',
-    backgrounds: { disable: true }, // 用主题背景，禁用 Storybook 默认背景切换
+    backgrounds: { disable: true },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/ } }
   },
   decorators: [
     (Story, ctx) => {
       const theme = ctx.globals.theme || 'light';
+
+      // 把 data-theme 写到 documentElement，让 body 的背景跟随主题切换
+      useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+      }, [theme]);
+
+      // 装饰器只是个轻量 wrapper：透明背景、不撑高度
       return (
-        <div
-          data-theme={theme}
-          className="ui-preview-wrapper"
-          style={{
-            background: 'var(--color-bg-page)',
-            color: 'var(--color-text-primary)',
-            minHeight: '100vh',
-            transition: 'background 0.3s, color 0.3s'
-          }}
-        >
+        <div data-theme={theme} className="ui-preview-wrapper">
           <Story />
         </div>
       );

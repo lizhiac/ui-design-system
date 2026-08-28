@@ -1,7 +1,30 @@
 /* Storybook 预览环境样式 */
+
+/* 装饰器 wrapper：透明、不撑高度 */
 .ui-preview-wrapper {
   font-family: var(--font-family-base, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif);
   padding: 16px;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* 把背景色放到 body（覆盖整个 canvas），跟随主题切换 */
+:root {
+  background: var(--color-bg-card);
+}
+[data-theme="dark"] {
+  background: var(--color-bg-card);
+}
+
+body,
+.sb-show-main,
+#root {
+  background: var(--color-bg-page);
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .sb-show-main,
+[data-theme="dark"] #root {
+  background: var(--color-bg-page);
 }
