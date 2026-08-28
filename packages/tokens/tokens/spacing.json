@@ -1,11 +1,13 @@
 {
   "spacing": {
-    "xxs": { "value": "4rpx",  "type": "spacing" },
-    "xs":  { "value": "8rpx",  "type": "spacing" },
-    "sm":  { "value": "16rpx", "type": "spacing" },
-    "md":  { "value": "24rpx", "type": "spacing" },
-    "lg":  { "value": "32rpx", "type": "spacing" },
-    "xl":  { "value": "48rpx", "type": "spacing" },
-    "xxl": { "value": "64rpx", "type": "spacing" }
+    "_comment": "基础单位 8rpx（参考 TDesign spacer 体系），保留常用档位",
+    "xxs": { "value": "4rpx",  "type": "spacing", "description": "0.5 倍（参考 TDesign spacer-s）" },
+    "xs":  { "value": "8rpx",  "type": "spacing", "description": "1 倍（基础）" },
+    "sm":  { "value": "16rpx", "type": "spacing", "description": "2 倍" },
+    "md":  { "value": "24rpx", "type": "spacing", "description": "3 倍" },
+    "lg":  { "value": "32rpx", "type": "spacing", "description": "4 倍" },
+    "xl":  { "value": "48rpx", "type": "spacing", "description": "6 倍" },
+    "xxl": { "value": "64rpx", "type": "spacing", "description": "8 倍" },
+    "xxxl":{ "value": "96rpx", "type": "spacing", "description": "12 倍" }
   }
 }

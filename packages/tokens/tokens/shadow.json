@@ -1,8 +1,34 @@
 {
   "shadow": {
-    "none":   { "value": "none",                                  "type": "boxShadow" },
-    "sm":     { "value": "0 2rpx 8rpx rgba(29,33,41,0.06)",       "type": "boxShadow", "description": "卡片轻浮起" },
-    "md":     { "value": "0 4rpx 16rpx rgba(29,33,41,0.08)",      "type": "boxShadow" },
-    "lg":     { "value": "0 8rpx 24rpx rgba(29,33,41,0.12)",      "type": "boxShadow", "description": "弹窗/Tab" }
+    "_comment": "参考 TDesign 1/2/3 三阶阴影 + Vant 的 box-shadow 模式",
+    "none":   { "value": "none",                                       "type": "boxShadow" },
+    "1":      { "value": "0 2rpx 8rpx rgba(29,33,41,0.06)",            "type": "boxShadow", "description": "基础/下层（参考 TDesign shadow-1）" },
+    "2":      { "value": "0 4rpx 16rpx rgba(29,33,41,0.10)",           "type": "boxShadow", "description": "中层（下拉、选择器，参考 TDesign shadow-2）" },
+    "3":      { "value": "0 8rpx 24rpx rgba(29,33,41,0.12)",           "type": "boxShadow", "description": "上层（弹窗、Toast，参考 TDesign shadow-3）" },
+    "inset":  { "value": "inset 0 1rpx 2rpx rgba(29,33,41,0.05)",       "type": "boxShadow", "description": "内描边（参考 TDesign shadow-inset）" }
+  },
+  "motion": {
+    "_comment": "动效（参考 TDesign 缓动 + Vant duration）",
+    "duration": {
+      "fast":     { "value": "0.2s", "type": "motionDuration", "description": "参考 Vant duration-fast" },
+      "base":     { "value": "0.3s", "type": "motionDuration", "description": "参考 Vant duration-base" },
+      "moderate": { "value": "0.24s","type": "motionDuration", "description": "参考 TDesign moderate" },
+      "slow":     { "value": "0.28s","type": "motionDuration", "description": "参考 TDesign slow" }
+    },
+    "easing": {
+      "easing":   { "value": "cubic-bezier(0.38, 0, 0.24, 1)", "type": "motionEasing", "description": "参考 TDesign easing" },
+      "ease-out": { "value": "cubic-bezier(0, 0, 0.15, 1)",     "type": "motionEasing" },
+      "ease-in":  { "value": "cubic-bezier(0.82, 0, 1, 0.9)",    "type": "motionEasing" }
+    }
+  },
+  "zindex": {
+    "_comment": "层级（参考 TDesign）",
+    "affix":        { "value": "500",  "type": "zIndex" },
+    "drawer":       { "value": "1500", "type": "zIndex" },
+    "dialog":       { "value": "2500", "type": "zIndex" },
+    "loading":      { "value": "3500", "type": "zIndex" },
+    "toast":        { "value": "5000", "type": "zIndex" },
+    "popup":        { "value": "5500", "type": "zIndex" },
+    "notification": { "value": "6000", "type": "zIndex" }
   }
 }

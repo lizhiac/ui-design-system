@@ -1,22 +1,28 @@
 {
   "font": {
     "size": {
-      "xs":   { "value": "20rpx", "type": "fontSize", "description": "辅助说明" },
-      "sm":   { "value": "24rpx", "type": "fontSize" },
-      "md":   { "value": "28rpx", "type": "fontSize", "description": "正文" },
-      "lg":   { "value": "32rpx", "type": "fontSize" },
-      "xl":   { "value": "36rpx", "type": "fontSize" },
-      "xxl":  { "value": "44rpx", "type": "fontSize", "description": "大标题" }
+      "_comment": "基准 12rpx（≈24rpx@750）起，参考 TDesign 10px 体系 + Vant 4 档",
+      "xs":   { "value": "20rpx", "type": "fontSize", "description": "辅助说明（≈10px）" },
+      "sm":   { "value": "24rpx", "type": "fontSize", "description": "五级字号（≈12px）" },
+      "md":   { "value": "28rpx", "type": "fontSize", "description": "常规正文（≈14px）" },
+      "lg":   { "value": "32rpx", "type": "fontSize", "description": "三级字号（≈16px）" },
+      "xl":   { "value": "40rpx", "type": "fontSize", "description": "二级字号（≈20px）" },
+      "xxl":  { "value": "72rpx", "type": "fontSize", "description": "一级字号（≈36px）" }
     },
     "weight": {
       "regular":  { "value": "400", "type": "fontWeight" },
-      "medium":   { "value": "500", "type": "fontWeight" },
+      "medium":   { "value": "500", "type": "fontWeight", "description": "中等（参考 Vant 600）" },
       "bold":     { "value": "700", "type": "fontWeight" }
     },
     "line-height": {
-      "tight":   { "value": "1.2", "type": "lineHeight" },
-      "normal":  { "value": "1.4", "type": "lineHeight" },
-      "relaxed": { "value": "1.6", "type": "lineHeight" }
+      "tight":   { "value": "1.2",  "type": "lineHeight", "description": "紧凑" },
+      "normal":  { "value": "1.5",  "type": "lineHeight", "description": "常规（参考 TDesign）" },
+      "relaxed": { "value": "1.6",  "type": "lineHeight", "description": "宽松" }
+    },
+    "family": {
+      "_comment": "参考 Vant 跨平台字体栈 + TDesign 中文优先",
+      "base":    { "value": "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif", "type": "fontFamily" },
+      "medium":  { "value": "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', Arial Medium, sans-serif", "type": "fontFamily" }
     }
   }
 }

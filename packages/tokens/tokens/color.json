@@ -1,29 +1,53 @@
 {
   "color": {
     "text": {
-      "primary":   { "value": "#1D2129", "type": "color", "description": "主文本/激活态/标准黑" },
-      "secondary": { "value": "#4E5969", "type": "color", "description": "次要文本" },
-      "tertiary":  { "value": "#86909C", "type": "color", "description": "辅助/禁用文本" },
+      "primary":    { "value": "#1D2129", "type": "color", "description": "主文本（标准黑）/ 激活态" },
+      "secondary":  { "value": "#4E5969", "type": "color", "description": "次要文本" },
+      "tertiary":   { "value": "#86909C", "type": "color", "description": "辅助文本" },
       "placeholder":{ "value": "#C9CDD4", "type": "color", "description": "占位文本" },
-      "inverse":   { "value": "#FFFFFF", "type": "color", "description": "深底反白文字" }
+      "disabled":   { "value": "#C9CDD4", "type": "color", "description": "禁用文本" },
+      "inverse":    { "value": "#FFFFFF", "type": "color", "description": "深底反白文字" },
+      "link":       { "value": "#165DFF", "type": "color", "description": "链接色" }
     },
     "border": {
-      "default": { "value": "#E5E6EB", "type": "color" },
-      "strong":  { "value": "#1D2129", "type": "color" },
-      "light":   { "value": "#F2F3F5", "type": "color" }
+      "default": { "value": "#E5E6EB", "type": "color", "description": "默认边框" },
+      "strong":  { "value": "#1D2129", "type": "color", "description": "强调边框（按钮黑边）" },
+      "light":   { "value": "#F2F3F5", "type": "color", "description": "浅分割线" }
     },
     "bg": {
-      "page":   { "value": "#F7F8FA", "type": "color" },
-      "card":   { "value": "#FFFFFF", "type": "color" },
-      "mask":   { "value": "rgba(29,33,41,0.5)", "type": "color" }
+      "page":      { "value": "#F7F8FA", "type": "color", "description": "页面背景" },
+      "card":      { "value": "#FFFFFF", "type": "color", "description": "卡片背景" },
+      "container": { "value": "#FFFFFF", "type": "color", "description": "容器背景" },
+      "container-hover":  { "value": "#F7F8FA", "type": "color" },
+      "container-active": { "value": "#F2F3F5", "type": "color" },
+      "mask":      { "value": "rgba(29,33,41,0.5)", "type": "color" }
     },
     "brand": {
-      "primary":  { "value": "#FFD933", "type": "color", "description": "主品牌色/胶囊按钮底色" },
-      "primary-press": { "value": "#F5C500", "type": "color" },
+      "primary":  { "value": "#FFD933", "type": "color", "description": "品牌主色 / 胶囊按钮底色" },
+      "primary-press": { "value": "#F5C500", "type": "color", "description": "按压态" },
       "success":  { "value": "#00B42A", "type": "color" },
+      "success-light": { "value": "#E8F8EB", "type": "color" },
       "warning":  { "value": "#FF7D00", "type": "color" },
+      "warning-light": { "value": "#FFF3E0", "type": "color" },
       "danger":   { "value": "#F53F3F", "type": "color" },
+      "danger-light":  { "value": "#FFECE8", "type": "color" },
       "info":     { "value": "#86909C", "type": "color" }
+    },
+    "_meta": {
+      "_palette": {
+        "_comment": "参考 Vant 灰阶 + TDesign 14 阶，做深色主题/自定义调色板时使用",
+        "black":  { "value": "#000000", "type": "color" },
+        "white":  { "value": "#FFFFFF", "type": "color" },
+        "gray-1": { "value": "#F7F8FA", "type": "color" },
+        "gray-2": { "value": "#F2F3F5", "type": "color" },
+        "gray-3": { "value": "#E5E6EB", "type": "color" },
+        "gray-4": { "value": "#DCDEE0", "type": "color" },
+        "gray-5": { "value": "#C9CDD4", "type": "color" },
+        "gray-6": { "value": "#86909C", "type": "color" },
+        "gray-7": { "value": "#4E5969", "type": "color" },
+        "gray-8": { "value": "#1D2129", "type": "color" }
+      },
+      "_comment": "来源：TDesign _variables.less（间距/字号/圆角）+ Vant css-variables.less（颜色调色板），保留自有规范（#1D2129 黑字 + #FFD933 黄按钮 + 44rpx 胶囊圆角）"
     }
   }
 }

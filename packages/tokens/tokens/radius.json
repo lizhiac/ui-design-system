@@ -1,10 +1,11 @@
 {
   "radius": {
-    "none":  { "value": "0",     "type": "borderRadius" },
-    "sm":    { "value": "8rpx",  "type": "borderRadius", "description": "小元素/Tag" },
-    "md":    { "value": "16rpx", "type": "borderRadius", "description": "卡片/弹窗" },
-    "lg":    { "value": "24rpx", "type": "borderRadius" },
-    "pill":  { "value": "44rpx", "type": "borderRadius", "description": "胶囊按钮（高 88rpx 一半）" },
-    "round": { "value": "9999rpx", "type": "borderRadius", "description": "完全圆角" }
+    "_comment": "保留自有胶囊规范 + 参考 Vant sm/md/lg/max",
+    "none":  { "value": "0",      "type": "borderRadius" },
+    "sm":    { "value": "8rpx",   "type": "borderRadius", "description": "Tag/小元素（参考 Vant sm=2px → 4rpx 升级）" },
+    "md":    { "value": "16rpx",  "type": "borderRadius", "description": "卡片/弹窗（参考 Vant md=4px → 8rpx 升级）" },
+    "lg":    { "value": "24rpx",  "type": "borderRadius", "description": "大卡片" },
+    "pill":  { "value": "44rpx",  "type": "borderRadius", "description": "胶囊按钮（height 88rpx 一半，自有规范）" },
+    "round": { "value": "9999rpx","type": "borderRadius", "description": "完全圆角（Vant max=999px）" }
   }
 }
