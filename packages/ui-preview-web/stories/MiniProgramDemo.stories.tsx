@@ -50,6 +50,7 @@ const codeBlock = (code: string, lang = 'html') => (
 
 const meta: Meta = {
   title: 'Demo/微信小程序 Demo',
+  tags: ['autodocs'],
   parameters: {
     docs: {
       page: () => (

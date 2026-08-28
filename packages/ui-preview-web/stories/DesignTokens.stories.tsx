@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
   title: 'Design System/Tokens',
+  tags: ['autodocs'], // 覆盖默认 ['dev', 'test']，确保生产构建收录
   parameters: {
     docs: {
       page: () => (

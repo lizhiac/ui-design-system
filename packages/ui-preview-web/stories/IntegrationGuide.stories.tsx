@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
   title: 'Integration/混合方案：自建 + Vant Weapp',
+  tags: ['autodocs'],
   parameters: {
     docs: {
       page: () => (
