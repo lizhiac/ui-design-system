@@ -18,10 +18,9 @@ module.exports = {
       ]
     },
     'css-rpx': {
-      // 额外输出一份把 rpx 转成 px 的版本，给 Web 预览用
+      // 额外输出一份给 Web 预览用（rpx → px 转换在组件层处理，这里保持和 css 一致）
       transformGroup: 'css',
       buildPath: 'dist/css-rpx/',
-      transforms: ['attribute/cti', 'name/cti/kebab', 'size/rem', 'color/css'],
       files: [
         {
           destination: 'variables.css',
