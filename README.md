@@ -2,6 +2,12 @@
 
 > 一套设计 Token + 跨端组件库，主战场是**微信小程序**，同时支持后续 **Web / APP** 复用。
 
+## 🌐 在线预览
+
+**Storybook 文档站**：https://lizhiac.github.io/ui-design-system/
+
+每次 `git push` 到 `main` 分支自动重新构建 + 部署。
+
 ## 架构
 
 ```
@@ -186,3 +192,25 @@ Toast.loading('加载中');
 - [ ] APP 端：用 RN/Flutter 包同样消费 token
 - [ ] PC 端：另起 `ui-pc` 包
 - [ ] CI/CD：发布到私有 npm，自动生成 changelog
+
+## GitHub Pages 部署说明
+
+仓库使用 **GitHub Actions + GitHub Pages** 自动部署：
+
+- **仓库**：https://github.com/lizhiac/ui-design-system
+- **预览 URL**：https://lizhiac.github.io/ui-design-system/
+- **触发条件**：推送到 `main` 分支
+- **构建时间**：约 30 秒
+- **工作流文件**：`.github/workflows/deploy-storybook.yml`
+
+### 部署首次配置步骤（其他项目复用）
+
+1. 仓库 Settings → Pages → Source 选 **GitHub Actions**（或用 `gh api -X POST repos/{owner}/{repo}/pages -f build_type=workflow`）
+2. 在仓库 Settings → Actions → General → Workflow permissions 选 **Read and write permissions**
+3. Workflow 文件必须在 `.github/workflows/` 下，且 push 时需用有 `workflow` scope 的 PAT（OAuth App 的 gh CLI 无法 push workflow 文件）
+
+### 已知限制
+
+- GitHub OAuth App（如 `gh auth` 默认 token）不能 push `.github/workflows/` 文件，必须用 **Personal Access Token (PAT)** 勾选 `workflow` scope
+- 首次 push workflow 时如果报错，用：`git push https://x-access-token:<PAT>@github.com/<owner>/<repo>.git main`
+- 之后 workflow 已存在，正常 `git push` 即可
